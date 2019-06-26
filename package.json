@@ -1,0 +1,17 @@
+{
+  "name": "sphyre-stats-bot",
+  "version": "1.0.0",
+  "description": "Character Roller for D&D 5e",
+  "main": "bot.js",
+  "author": "Kris Elbert",
+  "dependencies": {
+    "discord.io": "github:Woor/discord.io#gateway_v6",
+    "winston": "^3.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "repository": ""
+}
