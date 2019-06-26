@@ -1,26 +1,47 @@
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
+const Discord = require('discord.js');
+//const logger = require('winston');
+const prefix = '~';
 
+const auth = require('./auth.json'); // Load up the token
+/*
+// winston
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
   colorize: true
 });
 logger.level = 'debug';
+*/
 
-var bot = new Discord.Client({
-  token: auth.token,
-  autorun: true
+const bot = new Discord.Client();
+bot.on('ready', () => {
+  console.log('Botty boy is ready');
 });
 
-bot.on('ready', function(evt) {
-  logger.info('Connected');
-  logger.info('Logged in as: ');
-  logger.info(bot.username = '-(' + bot.id + ')');
+/*
+logger.info('Logged in as: ');
+logger.info(bot.username = '-(' + bot.id + ')');
+*/
+
+bot.on('message', message => {
+  if (message.author.bot) return;
+
+  if (message.content.substring(0,1) === prefix) {
+    // split around spaces
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    switch (command) {
+      case 'ping':
+        message.channel.send('pong!');
+        break;
+      default:
+        message.channel.send('I don\'t recognize that.');
+    }
+  }
 });
 
-bot.on('message', function(user, userID, channelID, message, evt) {
-  // listens for messages that start with '~'
+/*
+bot.on('message', function(user, userID, channelID, msg, event) {
   if (message.substring(0, 1) === '~') {
     var args = message.substring(1).split('');
     var cmd = args[0];
@@ -36,3 +57,10 @@ bot.on('message', function(user, userID, channelID, message, evt) {
     }
   }
 });
+*/
+
+bot.on('disconnect', () => {
+  bot.connect(); // Will reconnect
+});
+
+bot.login(auth.token);
