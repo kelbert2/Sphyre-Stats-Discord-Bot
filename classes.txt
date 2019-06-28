@@ -1,0 +1,44 @@
+barbarian
+STR,
+
+fighter
+STR or DEX, INT for eldritch knight
+
+paladin
+STR, CHA
+
+monk
+DEX,
+
+rogue
+DEX, INT for arcane trickster subclass
+
+ranger
+DEX, WIS
+
+wizard
+INT,
+
+Artificer
+INT,
+
+Mystic
+INT,
+
+cleric
+WIS,
+
+druid
+WIS,
+
+monk
+WIS,
+
+bard
+CHA,
+
+warlock
+CHA,
+
+sorcerer
+CHA

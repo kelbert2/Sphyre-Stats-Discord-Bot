@@ -1,0 +1,378 @@
+~hybrid hardcore d b b b d d
+1 contingency points remaining
+To spend contingency points, use command "~contingency # # # # # #"
+To add racial bonuses, use command "~race # # # # # #"
+
+~hybrid softcore
+
+~standard
+
+~race racename
+~dwarf subtype
+~class classname
+~recommend -race !mh -phb
+~recommend -class
+
+result = Math.floor(Math.random() * (max-min+1) + min);
+
+STR DEX CON INT WIS CHA
+
+| Strength | Dexterity | Constitution | Intelligence | Wisdom  | Charisma |
+| -------- | --------- | ------------ | ------------ | ------- | -------- |
+| strRoll  | dexRoll   | conRoll      | intRoll      | wisRoll | chaRoll  |
+
+| STR     | DEX     | CON     | INT     | WIS     | CHA      |
+| ------- | ------- | ------- | ------- | ------- | -------- |
+| strRoll | dexRoll | conRoll | intRoll | wisRoll | chaRoll  |
+
+aarakocra
+0, 2, 0, 0, 1, 0
+
+aasimar
+0, 0, 0, 0, 0, 2
+fallen +1 STR
+protector, none +1 WIS
+scourge +1 CON
+
+aetherborn
+0, 0, 0, 0, 0, 2
+ +1 to two others
+
+alseid
+0, 2, 0, 0, 1, 0
+
+aven
+0, 2, 0, 0, 0, 0
+hawk +2 WIS
+ibis +1 INT
+
+bugbear
+2, 1, 0, 0, 0, 0
+
+centaur
+2, 0, 0, 0, 1, 0
+
+changeling
++1 to DEX or INT
+0, 0, 0, 0, 0, 2
+
+dwarf
+0, 0, 2, 0, 0, 0
+duergar +1 STR
+hill +1 WIS
+kundarak +1 DEX, +1 INT
+kaladesh +1 WIS
+mountain +2 STR
+
+dragonborn
+0, 0, 0, 0, 0, 1
+usual +2 STR
+edjet, soldier +1 DEX, +1 CHA
+flame, fire +1 STR, +1 CHA
+stone, cave +1 CON, +1 CHA
+wave, tide +1 WIS, +1 CHA
+wind, storm +1 INT, +1 CHA
+
+elf
+0, 2, 0, 0, 0, 0
+eladrin, high, variant  +1 INT
+kaladesh, wood +1 WIS
+shadow, drow +1 CHA
+sea, shadar-kai +1 CON
+zendikar joraga 0, 1, 0, 0, 2, 0
+zendikar mul daya 1, 0, 0, 0, 2, 0
+zendikar tajuru 0, 0, 0, 0, 2, 1
+
+firebolg, firbolg
+1, 0, 0, 0, 2, 0
+
+gearforged +1 to any two
+
+genasi
+0, 0, 2, 0, 0, 0
+air, djinn +1 DEX
+earth +1 STR
+fire +1 INT
+water +1 WIS
+
+gith
+0, 0, 0, 1, 0, 0
+githyanki +2 STR
+githzerai +2 WIS
+
+gnoll
+2, 0, 0, 0, 0, 0
+civilized +1 CON
+savage +1 WIS
+
+gnome
+0, 0, 0, 2, 0, 0
+deep, forest +1 DEX
+scribing +1 CHA
+rock +1 CON
+
+goblin
+0, 2, 1, 0, 0, 0
+Ixalan, zendikar 0, 0, 2, 0, 0, 0
+
+goliath
+2, 0, 1, 0, 0, 0
+
+halfling
+0, 2, 0, 0, 0, 0
+lightfoot +1 CHA
+healing, jorasco +1 WIS
+hospitality, ghallanda +1 CHA
+stout +1 CON
+
+half-elf
+0, 0, 0, 0, 0, 2
+ +1 to two other ability scores
+
+half-orc
+2, 0, 1, 0, 0, 0
+mark of finding 1, 0, 0, 0, 1, 0 which is +1 STR, +1 WIS, +1 any
+
+hobgoblin
+0, 0, 2, 1, 0, 0
+
+human
+1, 1, 1, 1, 1, 1
+vadalis +1 DEX, +1 WIS, +1 any
+Cannith +1 INT, +1 DEX, +1 either DEX or INT
+orien +2 DEX, +1 other
+deneith +1 STR, +1 WIS, +1 any
+
+variant-human vhuman
++1 to two different of choice
+
+kalashtar
++1 to any
+0, 0, 0, 0, 1, 1
+
+kenku
+0, 2, 0, 0, 1, 0
+
+khenra
+1, 2, 0, 0, 0, 0
+
+kobold
+-2, 2, 0, 0, 0, 0
+midgard 0, 2, 0, 0, 1, 0
+
+kor
+0, 2, 0, 0, 1, 0
+
+lizardfolk volo's
+0, 0, 2, 0, 1, 0
+lizardfolk southlands
+2, 0, 0, 0, 1, 0
+
+loxodon
+0, 0, 2, 0, 1, 0
+
+merfolk
+0, 0, 0, 0, 0, 1
+cosi, trickster +1 INT, +1 CHA
+emeria, wind +2 WIS
+ula, water +2 INT
+ixalan blue +2 INT
+ixalan green +2 WIS
+
+minotaur
+2, 0, 1, 0, 0, 0
+
+naga
+0, 0, 2, 1, 0, 0
+
+orc
+2, 0, 1, -2, 0, 0
+orc Ixalan
+2, 0, 1, 0, 0, 0
+
+ravenfolk
+0, 0, 1, 0, 0, 1
+
+shifter
+0, 1, 0, 0, 0, 0
+beasthide +2 CON
+longtooth +2 STR
+swiftstride +1 DEX, +1 CHA
+wildhunt +2 WIS
+
+simic hybrid
++1 to something other than con
+0, 0, 2, 0, 0, 0
+
+siren
+0, 0, 0, 0, 0, 2
+
+tabaxi
+0, 2, 0, 0, 0, 1
+
+tiefling
+0, 0, 0, 1, 0, 2
+dispater, glasya 0, 1, 0, 0, 0, 2
+scag feral variant 0, 2, 0, 1, 0, 0
+fierna 0, 0, 0, 0, 1, 2
+levistus 0, 0, 1, 0, 0, 2
+zariel 1, 0, 0, 0, 0, 2
+
+tortle
+2, 0, 0, 0, 1, 0
+
+tosculi hiveless
++2 to (1) STR, DEX, or CON
++2 to (1) INT, WIS, or CHA
+-2 to any
+
+triton
+1, 0, 1, 0, 0, 1
+
+trollkin
+0, 0, 2, 0, 0, 0
+night whisper +1 WIS
+stonehide +1 STR
+
+vampire
+0, 0, 0, 0, 0, 2
+ixalan +1 WIS
+zendikar +1 INT
+
+vedalken
+0, 0, 0, 2, 1, 0
+
+verdan
+0, 0, 1, 0, 0, 2
+
+warforged
+0, 0, 1, 0, 0, 0
++1 to any two others or
+juggernaut +2 STR
+skirmisher +2 DEX
+
+werelion
+1, 0, 0, 0, 2, 0
+
+yuan-ti pureblood
+0, 0, 0, 1, 0, 2
+
+str dex con int wis cha
+
+Books
+Player's handbook
+PHB
+dwarf: hill,
+dwarf: mountain,
+dragonborn,
+elf: drow,
+elf: high,
+elf: wood,
+gnome,
+halfling,
+half-elf,
+half-orc,
+human,
+human: variant,
+tiefling,
+
+Dungeon Master's Guide
+DMG
+aasimar,
+
+Elemental Evil
+EE
+aarakocra,
+genasi,
+goliath,
+
+
+Plane Shift: Amonket
+PSA
+aven,
+khenra,
+minotaur: amonkhet,
+naga,
+
+Plane Shift: ixalan
+PSI
+goblin: ixalan,
+merfolk: ixalan blue, ixalan green,
+orc: ixalan,
+siren,
+vampire: ixalan,
+
+Plane Shift: Kaladesh
+PSK
+aetherborn,
+dwarf: kaladesh,
+vedalken,
+
+Plane Shift: Zendikar
+PSZ
+elf: zendikar joraga,
+elf: zendikar mul daya,
+elf: zendikar tajuru,
+goblin: zendikar,
+kor,
+merfolk: cosi, trickster, emeria, wind, ula, water,
+vampire: zendikar,
+
+Sword Coast Adventurer's Guide
+SCAG
+tiefling: feral variant,
+
+Volo's Guide to Monsters
+VGM
+aasimar: fallen,
+aasimar: protector,
+aasimar: scourge,
+bugbear,
+firbolg,
+goblin,
+hobgoblin,
+kenku,
+kobold,
+lizardfolk: volo's,
+orc,
+tabaxi,
+triton,
+yuan-ti pureblood,
+
+Mordenkainen's Tome of Foes
+MTF
+dwarf: duergar,
+elf: sea, shadar-kai,
+gith,
+tiefling: dispater, glasya, fierna, levistus, zariel, others
+
+Unearthed Arcana Races of Eberron
+UA: E
+changeling,
+kalashtar,
+shifter,
+warforged,
+
+Southlands Heroes
+SH
+gnoll,
+lizardfolk: southlands,
+minotaur: southlands,
+tosculi hiveless,
+werelion,
+
+
+Midgard Heroes
+MH
+alseid,
+centaur,
+dragonkin,
+elf: shadow fey,
+gearforged,
+kobold: midgard,
+minotaur: midgard,
+ravenfolk,
+trollkin,
+
+Source:
+https://docs.google.com/document/d/1PhQ933l3svEnqREAYwPKwJOlxPFK5R4s1TwwZ4Xem8Y/edit

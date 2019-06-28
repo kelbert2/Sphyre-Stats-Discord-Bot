@@ -12,6 +12,8 @@ logger.add(new logger.transports.Console, {
 logger.level = 'debug';
 */
 
+let usingHardcore = false;
+
 const bot = new Discord.Client();
 bot.on('ready', () => {
   console.log('Botty boy is ready');
@@ -33,6 +35,14 @@ bot.on('message', message => {
     switch (command) {
       case 'ping':
         message.channel.send('pong!');
+        break;
+      case 'hybrid':
+        if (args[0] == hardcore) {
+          // six things, a b c // DEBUG:
+        } else {
+          // assume softcore
+        }
+        // respond with contigency points, number remaining
         break;
       default:
         message.channel.send('I don\'t recognize that.');
