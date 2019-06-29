@@ -1,33 +1,27 @@
 const Discord = require('discord.js');
-//const logger = require('winston');
-const prefix = '~';
 
 const auth = require('./auth.json'); // Load up the token
-/*
-// winston
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-  colorize: true
-});
-logger.level = 'debug';
-*/
+const config = require('./config.json');
+const Enmap = require('enmap');
 
 let usingHardcore = false;
 
 const bot = new Discord.Client();
 bot.on('ready', () => {
-  console.log('Botty boy is ready');
+  console.log('Stats bot is ready');
 });
 
-/*
-logger.info('Logged in as: ');
-logger.info(bot.username = '-(' + bot.id + ')');
-*/
+// for memory usage: https://enmap.evie.dev/examples/settings
+bot.settings = new Enmap({
+  name: "settings",
+  fetchAll: false,
+  autoFetch: true,
+  cloneLevel: 'deep'
+});
 
 bot.on('message', message => {
-  if (message.author.bot) return;
+  if (message.author.bot || !message.content.startsWith(config.prefix)) return;
 
-  if (message.content.substring(0,1) === prefix) {
     // split around spaces
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
@@ -37,17 +31,12 @@ bot.on('message', message => {
         message.channel.send('pong!');
         break;
       case 'hybrid':
-        if (args[0] == hardcore) {
-          // six things, a b c // DEBUG:
-        } else {
-          // assume softcore
-        }
+      let [strEquation dexEquation conEquation intEquation wisEquation chaEquation] = args;
         // respond with contigency points, number remaining
         break;
       default:
         message.channel.send('I don\'t recognize that.');
     }
-  }
 });
 
 /*
@@ -68,7 +57,9 @@ bot.on('message', function(user, userID, channelID, msg, event) {
   }
 });
 */
-
+bot.on('error', (e) => console.error(e));
+bot.on('warn', (e) => console.warn(e));
+bot.on('debug', (e) => console.info(e));
 bot.on('disconnect', () => {
   bot.connect(); // Will reconnect
 });
