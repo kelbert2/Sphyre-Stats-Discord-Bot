@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 
 const auth = require('./auth.json'); // Load up the token
 const config = require('./config.json');
-const Enmap = require('enmap');
+
+// const Enmap = require('enmap');
+// const fs = require('fs');
 
 let usingHardcore = false;
 
@@ -12,18 +14,20 @@ bot.on('ready', () => {
 });
 
 // for memory usage: https://enmap.evie.dev/examples/settings
+/*
 bot.settings = new Enmap({
   name: "settings",
   fetchAll: false,
   autoFetch: true,
   cloneLevel: 'deep'
 });
+*/
 
 bot.on('message', message => {
   if (message.author.bot || !message.content.startsWith(config.prefix)) return;
 
     // split around spaces
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     switch (command) {
@@ -31,8 +35,27 @@ bot.on('message', message => {
         message.channel.send('pong!');
         break;
       case 'hybrid':
-      let [strEquation dexEquation conEquation intEquation wisEquation chaEquation] = args;
+      // let [strEquation dexEquation conEquation intEquation wisEquation chaEquation] = args;
         // respond with contigency points, number remaining
+        let ret = [0, 0, 0, 0, 0, 0];
+        for (i = 0; i < args.length; i++) {
+          switch (args[i]) {
+            case 'a':
+              ret[i] = 15 +  Math.floor((Math.random() * (6) + 1)/2);
+              break;
+            case 'b':
+              ret[i] = 10 + 2 * Math.floor(Math.random() * (4) + 1);
+              break;
+            case 'c':
+              ret[i] = 6 + 2 * Math.floor(Math.random() * (6) + 1);
+              break;
+            default:
+              ret[i] = 3 * Math.floor(Math.random() * (6) + 1);
+              break;
+          }
+          message.channel.send(ret[i]+' ');
+        }
+
         break;
       default:
         message.channel.send('I don\'t recognize that.');
