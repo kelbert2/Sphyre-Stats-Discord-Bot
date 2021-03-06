@@ -1,3 +1,4 @@
+// jack sneeringer
 const Discord = require('discord.js');
 
 const auth = require('./auth.json'); // Load up the token
@@ -57,8 +58,14 @@ bot.on('message', message => {
         }
 
         break;
+      case 'roll':
+        let [iterations, dice] = args.split('d');
+
+case 'help':
+  message.channel.send('Recognized commands: roll, ping, hybrid, that\'s it.');
+
       default:
-        message.channel.send('I don\'t recognize that.');
+        message.channel.send('I don\'t recognize that. Sorry.');
     }
 });
 
