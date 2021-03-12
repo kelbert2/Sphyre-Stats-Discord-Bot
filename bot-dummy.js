@@ -53,8 +53,6 @@ bot.on('message', message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    console.log("ARGS ARE " + args);
-
     switch (command) {
         case commandPing:
             message.channel.send('pong!');
@@ -73,7 +71,6 @@ bot.on('message', message => {
             pointArray = [0, 0, 0, 0, 0, 0];
             prevPointArray = pointArray;
             message.channel.send(hybrid(args, pointArray));
-            console.log("point array: " + pointArray);
             break;
         case commandContingency:
             prevPointArray = pointArray;
@@ -191,9 +188,7 @@ function rollIterations(args = '1d1') {
 }
 
 function roll(die = 1) {
-    let ret = Math.floor(Math.random() * die + 1);
-    console.log("rolling " + die + " die = " + ret);
-    return ret;
+    return Math.floor(Math.random() * die + 1);
 }
 
 // Roll Stats  ===============================================================================================
@@ -224,24 +219,16 @@ function hybrid(args, ret) {
         let rollRes;
         switch (args[i]) {
             case 'a':
-                rollRes = roll(6);
-                ret[i - 1] = 15 + Math.floor(rollRes / 2);
-                console.log("A: 15  + 1/2 * " + rollRes + " = " + ret[i - 1]);
+                ret[i - 1] = 15 + Math.floor(roll(6) / 2);
                 break;
             case 'b':
-                rollRes = roll(4);
-                ret[i - 1] = 10 + 2 * rollRes;
-                console.log("B: 10 + 2 * " + rollRes + " = " + ret[i - 1]);
+                ret[i - 1] = 10 + rollIterations('2d4').total;
                 break;
             case 'c':
-                rollRes = roll(6);
-                ret[i - 1] = 6 + 2 * rollRes;
-                console.log("C: 6 + 2 * " + rollRes + " = " + ret[i - 1]);
+                ret[i - 1] = 6 + rollIterations('2d6').total;
                 break;
             default:
-                rollRes = roll(6);
-                ret[i - 1] = 3 * rollRes;
-                console.log("D: 3 * " + rollRes + " = " + ret[i - 1]);
+                ret[i - 1] = rollIterations('3d6').total;
         }
     }
 
@@ -261,7 +248,6 @@ function getContingencyRemaining(letterArray, totalPoints) {
     letterArray.forEach(letter =>
         totalCost += getLetterPointCost(letter)
     );
-    console.log("contingency points cost: " + totalCost + " remaining: " + totalPoints);
     return totalPoints - totalCost;
 }
 
@@ -281,9 +267,6 @@ function getLetterPointCost(letter) {
 // Point Buy ===============================================================================================
 
 function spendContingencyPoints(numberArray, contPointArray, isUsingHardcore, nameArray) {
-    console.log("number array: " + numberArray);
-    console.log("contingency array: " + contPointArray);
-    console.log("remainingContingencyPoints: " + remainingContingencyPoints);
     for (i = 0; i < numberArray.length && remainingContingencyPoints > 0; i++) {
         if (remainingContingencyPoints < contPointArray[i]) {
             // cannot spend more contingency points than have
@@ -300,16 +283,12 @@ function spendContingencyPoints(numberArray, contPointArray, isUsingHardcore, na
 }
 
 function addContingencyPoint(existingValue, pointsToSpend) {
-    console.log("pointsToSpend: " + pointsToSpend);
     while (pointsToSpend > 0) {
         if (existingValue < 8) {
-            console.log("adding points: 3 + " + existingValue);
             existingValue += 3;
         } else if (existingValue < 15) {
-            console.log("adding points: 2 + " + existingValue);
             existingValue += 2;
         } else if (existingValue < 18) {
-            console.log("adding points: 1 + " + existingValue);
             existingValue += 1;
         }
         pointsToSpend--;
