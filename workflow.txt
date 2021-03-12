@@ -1,0 +1,44 @@
+COMMANDS
+undo
+(undoes last command or resets if hybrid)
+
+hybrid
+- softcore
+- hardcore
++ a b c d letters separated by spaces
+(validate valid point array)
+
+contingency
++ number array
+(spend until none remaining)
+
+assign
++ skill abbreviations array
+(only for softcore)
+
+race
+- number array
+- race-name separated by dashes
+
+feat
+- number array
+- feat-name separated by dashes
+
+
+info
+- race
+- class
+- attribute
+(arrange classes by which attributes are needed, races by attributes they benefit, races and classes that mesh well)
+(classes > attributes)
+(attributes > classes)
+(attributes > races)
+(races > attributes)
+
+help
+
+
+Configs
+include by book name
+races, classes, feats
+

@@ -1,64 +1,217 @@
 {
-"prefix": "~",
-"races": [
-    {"race": "dragonborn", "bonus": [2, 0, 0, 0, 0, 1]},
-    {"race": "dwarf", "bonus": [0, 0, 0, 0, 2, 0]},
-    {"race": "elf", "bonus": [0, 0, 0, 2, 0, 0]},
-    {"race": "half-elf", "bonus": [0, 0, 0, 0, 0, 2], "extra": 2},
-    {"race": "gnome", "bonus": [0, 2, 0, 0, 0, 0]},
-    {"race": "halfling", "bonus": [0, 0, 0, 2, 0, 0]},
-    {"race": "half-orc", "bonus": [2, 0, 0, 0, 1, 0]},
-    {"race": "human", "bonus": [1, 1, 1, 1, 1, 1]},
-    {"race": "tiefling", "bonus": [0, 1, 0, 0, 0, 2]},
+    "prefix": "~",
 
-    {"race": "orc-of-exandria", "bonus": [2, 0, 0, 0, 1, 0]},
-    {"race": "leonin", "bonus": [1, 0, 0, 0, 2, 0]},
-    {"race": "satyr", "bonus": [0, 0, 0, 1, 0, 2]},
+    "helpText": "helppp",
+    "resetText": "reset point array",
+    "unrecognized": "what?? ask for help.",
+    "hybridPointBuyError": "Softcore can only use up to 6 points, hardcore up to 7 points. a costs 3 points, b 2 points, c 1 point, and d 0 points. All remaining points can be spent after rolling to increase individual attributes.",
+    "nameArray": ["Strength", "Intelligence", "Wisdom", "Dexterity", "Constitution", "Charisma"],
+    "pluralContingencyPointsRemaining": "contingency points remaining.",
+    "singularContingencyPointsRemaining": "contingency point remaining.",
+    "nextContingencyMessage": "to spend contingency points, use command ",
+    "nextAssignMessage": "to assign attributes, use command ",
+    "nextRacialMessage": "to assign racial bonuses, use command: ",
+    "nextFeatMessage:": "to assign feat bonuses, use command: ",
 
-    {"race": "aarakocra", "bonus": [0, 0, 1, 2, 0, 0]},
-    {"race": "genasi", "bonus": [0, 0, 0, 0, 2, 0]},
-    {"race": "goliath", "bonus": [2, 0, 0, 0, 1, 0]},
+    "races": [{
+            "race": "dragonborn",
+            "bonus": [2, 0, 0, 0, 0, 1]
+        },
+        {
+            "race": "dwarf",
+            "bonus": [0, 0, 0, 0, 2, 0]
+        },
+        {
+            "race": "elf",
+            "bonus": [0, 0, 0, 2, 0, 0]
+        },
+        {
+            "race": "half-elf",
+            "bonus": [0, 0, 0, 0, 0, 2],
+            "extra": 2
+        },
+        {
+            "race": "gnome",
+            "bonus": [0, 2, 0, 0, 0, 0]
+        },
+        {
+            "race": "halfling",
+            "bonus": [0, 0, 0, 2, 0, 0]
+        },
+        {
+            "race": "half-orc",
+            "bonus": [2, 0, 0, 0, 1, 0]
+        },
+        {
+            "race": "human",
+            "bonus": [1, 1, 1, 1, 1, 1]
+        },
+        {
+            "race": "tiefling",
+            "bonus": [0, 1, 0, 0, 0, 2]
+        },
 
-    {"race": "aasimar", "bonus": [0, 0, 0, 0, 0, 2]},
-    {"race": "bugbear", "bonus": [2, 0, 0, 1, 0, 0]},
-    {"race": "firbolg", "bonus": [1, 0, 2, 0, 0, 0]},
-    {"race": "goblin", "bonus": [0, 0, 0, 2, 1, 0]},
-    {"race": "hobgoblin", "bonus": [0, 1, 0, 0, 2, 0]},
-    {"race": "kenku", "bonus": [0, 0, 1, 2, 0, 0]},
-    {"race": "kobold", "bonus": [0, 0, 0, 2, 0, 0]},
-    {"race": "lizardfolk", "bonus": [0, 0, 1, 0, 2, 0]},
-    {"race": "orc", "bonus": [2, 0, 0, 0, 1, 0]},
-    {"race": "tabaxi", "bonus": [0, 0, 0, 2, 0, 1]},
-    {"race": "triton", "bonus": [1, 0, 0, 0, 1, 1]},
-    {"race": "yuan-ti", "bonus": [0, 1, 0, 0, 0, 2]},
+        {
+            "race": "orc-of-exandria",
+            "bonus": [2, 0, 0, 0, 1, 0]
+        },
+        {
+            "race": "leonin",
+            "bonus": [1, 0, 0, 0, 2, 0]
+        },
+        {
+            "race": "satyr",
+            "bonus": [0, 0, 0, 1, 0, 2]
+        },
 
-    {"race": "tiefling-feral", "bonus": [0, 1, 0, 2, 0, 0]},
+        {
+            "race": "aarakocra",
+            "bonus": [0, 0, 1, 2, 0, 0]
+        },
+        {
+            "race": "genasi",
+            "bonus": [0, 0, 0, 0, 2, 0]
+        },
+        {
+            "race": "goliath",
+            "bonus": [2, 0, 0, 0, 1, 0]
+        },
 
-    {"race": "tortle", "bonus": [2, 0, 1, 0, 0, 0]},
+        {
+            "race": "aasimar",
+            "bonus": [0, 0, 0, 0, 0, 2]
+        },
+        {
+            "race": "bugbear",
+            "bonus": [2, 0, 0, 1, 0, 0]
+        },
+        {
+            "race": "firbolg",
+            "bonus": [1, 0, 2, 0, 0, 0]
+        },
+        {
+            "race": "goblin",
+            "bonus": [0, 0, 0, 2, 1, 0]
+        },
+        {
+            "race": "hobgoblin",
+            "bonus": [0, 1, 0, 0, 2, 0]
+        },
+        {
+            "race": "kenku",
+            "bonus": [0, 0, 1, 2, 0, 0]
+        },
+        {
+            "race": "kobold",
+            "bonus": [0, 0, 0, 2, 0, 0]
+        },
+        {
+            "race": "lizardfolk",
+            "bonus": [0, 0, 1, 0, 2, 0]
+        },
+        {
+            "race": "orc",
+            "bonus": [2, 0, 0, 0, 1, 0]
+        },
+        {
+            "race": "tabaxi",
+            "bonus": [0, 0, 0, 2, 0, 1]
+        },
+        {
+            "race": "triton",
+            "bonus": [1, 0, 0, 0, 1, 1]
+        },
+        {
+            "race": "yuan-ti",
+            "bonus": [0, 1, 0, 0, 0, 2]
+        },
 
-    {"race": "changeling", "bonus": [0, 0, 0, 0, 0, 2], "extra": 1},
-    {"race": "kalashtar", "bonus": [0, 0, 2, 0, 0, 1]},
-    {"race": "orc-of-eberron", "bonus": [2, 0, 0, 0, 1, 0]},
-    {"race": "shifter", "bonus": [0, 0, 0, 0, 0, 0]},
-    {"race": "warforged", "bonus": [0, 0, 0, 0, 2, 0], "extra": 1},
-    
-    {"race": "gith", "bonus": [0, 1, 0, 0, 0, 0]},
+        {
+            "race": "tiefling-feral",
+            "bonus": [0, 1, 0, 2, 0, 0]
+        },
 
-    {"race": "centaur", "bonus": [2, 0, 1, 0, 0, 0]},
-    {"race": "loxodon", "bonus": [0, 0, 1, 0, 2, 0]},
-    {"race": "minotaur", "bonus": [2, 0, 0, 0, 1, 0]},
-    {"race": "simic-hybrid", "bonus": [0, 0, 0, 0, 2, 0], "extra": 1},
-    {"race": "vedalken", "bonus": [0, 2, 1, 0, 0, 0]},
+        {
+            "race": "tortle",
+            "bonus": [2, 0, 1, 0, 0, 0]
+        },
 
-    {"race": "verdan", "bonus": [0, 0, 0, 0, 1, 2]},
+        {
+            "race": "changeling",
+            "bonus": [0, 0, 0, 0, 0, 2],
+            "extra": 1
+        },
+        {
+            "race": "kalashtar",
+            "bonus": [0, 0, 2, 0, 0, 1]
+        },
+        {
+            "race": "orc-of-eberron",
+            "bonus": [2, 0, 0, 0, 1, 0]
+        },
+        {
+            "race": "shifter",
+            "bonus": [0, 0, 0, 0, 0, 0]
+        },
+        {
+            "race": "warforged",
+            "bonus": [0, 0, 0, 0, 2, 0],
+            "extra": 1
+        },
 
-    {"race": "locathah", "bonus": [2, 0, 0, 1, 0, 0]},
+        {
+            "race": "gith",
+            "bonus": [0, 1, 0, 0, 0, 0]
+        },
 
-    {"race": "grung", "bonus": [0, 0, 0, 2, 1, 0]},
+        {
+            "race": "centaur",
+            "bonus": [2, 0, 1, 0, 0, 0]
+        },
+        {
+            "race": "loxodon",
+            "bonus": [0, 0, 1, 0, 2, 0]
+        },
+        {
+            "race": "minotaur",
+            "bonus": [2, 0, 0, 0, 1, 0]
+        },
+        {
+            "race": "simic-hybrid",
+            "bonus": [0, 0, 0, 0, 2, 0],
+            "extra": 1
+        },
+        {
+            "race": "vedalken",
+            "bonus": [0, 2, 1, 0, 0, 0]
+        },
 
-    {"race": "dhampir", "bonus": [0, 0, 0, 0, 0, 0]},
-    {"race": "hexblood", "bonus": [0, 0, 0, 0, 0, 0]},
-    {"race": "reborn", "bonus": [0, 0, 0, 0, 0, 0]}
-]
+        {
+            "race": "verdan",
+            "bonus": [0, 0, 0, 0, 1, 2]
+        },
+
+        {
+            "race": "locathah",
+            "bonus": [2, 0, 0, 1, 0, 0]
+        },
+
+        {
+            "race": "grung",
+            "bonus": [0, 0, 0, 2, 1, 0]
+        },
+
+        {
+            "race": "dhampir",
+            "bonus": [0, 0, 0, 0, 0, 0]
+        },
+        {
+            "race": "hexblood",
+            "bonus": [0, 0, 0, 0, 0, 0]
+        },
+        {
+            "race": "reborn",
+            "bonus": [0, 0, 0, 0, 0, 0]
+        }
+    ]
 }
-// STR INT WIS DEX CON CHA

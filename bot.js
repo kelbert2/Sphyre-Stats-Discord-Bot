@@ -27,46 +27,46 @@ bot.settings = new Enmap({
 bot.on('message', message => {
   if (message.author.bot || !message.content.startsWith(config.prefix)) return;
 
-    // split around spaces
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
+  // split around spaces
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
 
-    switch (command) {
-      case 'ping':
-        message.channel.send('pong!');
-        break;
-      case 'hybrid':
+  switch (command) {
+    case 'ping':
+      message.channel.send('pong!');
+      break;
+    case 'hybrid':
       // let [strEquation dexEquation conEquation intEquation wisEquation chaEquation] = args;
-        // respond with contigency points, number remaining
-        let ret = [0, 0, 0, 0, 0, 0];
-        for (i = 0; i < args.length; i++) {
-          switch (args[i]) {
-            case 'a':
-              ret[i] = 15 +  Math.floor((Math.random() * (6) + 1)/2);
-              break;
-            case 'b':
-              ret[i] = 10 + 2 * Math.floor(Math.random() * (4) + 1);
-              break;
-            case 'c':
-              ret[i] = 6 + 2 * Math.floor(Math.random() * (6) + 1);
-              break;
-            default:
-              ret[i] = 3 * Math.floor(Math.random() * (6) + 1);
-              break;
-          }
-          message.channel.send(ret[i]+' ');
+      // respond with contigency points, number remaining
+      let ret = [0, 0, 0, 0, 0, 0];
+      for (i = 0; i < args.length; i++) {
+        switch (args[i]) {
+          case 'a':
+            ret[i] = 15 + Math.floor((Math.random() * (6) + 1) / 2);
+            break;
+          case 'b':
+            ret[i] = 10 + 2 * Math.floor(Math.random() * (4) + 1);
+            break;
+          case 'c':
+            ret[i] = 6 + 2 * Math.floor(Math.random() * (6) + 1);
+            break;
+          default:
+            ret[i] = 3 * Math.floor(Math.random() * (6) + 1);
+            break;
         }
+        message.channel.send(ret[i] + ' ');
+      }
 
-        break;
-      case 'roll':
-        let [iterations, dice] = args.split('d');
+      break;
+    case 'roll':
+      let [iterations, dice] = args.split('d');
 
-case 'help':
-  message.channel.send('Recognized commands: roll, ping, hybrid, that\'s it.');
+    case 'help':
+      message.channel.send('Recognized commands: roll, ping, hybrid, that\'s it.');
 
-      default:
-        message.channel.send('I don\'t recognize that. Sorry.');
-    }
+    default:
+      message.channel.send('I don\'t recognize that. Sorry.');
+  }
 });
 
 /*

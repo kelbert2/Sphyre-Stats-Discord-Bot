@@ -5,6 +5,7 @@
   "main": "botio.js",
   "author": "Kris Elbert",
   "dependencies": {
+    "discord.js": "^12.5.1",
     "winston": "^3.2.1"
   },
   "scripts": {
