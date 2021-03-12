@@ -91,7 +91,7 @@ bot.on('message', message => {
             pointArray = prevPointArray;
 
         default:
-            message.channel.sent(config.unrecognized);
+            message.channel.send(config.unrecognized);
     }
 
 });
@@ -279,7 +279,7 @@ function spendContingencyPoints(numberArray, contPointArray, isUsingHardcore, na
     if (remainingContingencyPoints > 0) {
         return pointArrayMessage(buildNextContingencyMessage(remainingContingencyPoints, isUsingHardcore), numberArray, nameArray);
     }
-    return pointArrayMessage(isUsingHardcore ? buildNextRacialMessage() : buildNextAssignMessage(), numberArray, nameArray);
+    return pointArrayMessage(isUsingHardcore ? buildNextRacialMessage(remainingContingencyPoints) : buildNextAssignMessage(remainingContingencyPoints), numberArray, nameArray);
 }
 
 function addContingencyPoint(existingValue, pointsToSpend) {
